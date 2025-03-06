@@ -1,0 +1,10 @@
+dotenv
+requests
+pypdf
+cryptography
+browser_use
+langchain_community
+langchain_core
+langchain-ollama
+langchain-openai
+mcp
