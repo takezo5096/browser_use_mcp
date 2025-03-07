@@ -16,9 +16,6 @@ pythonパッケージ管理ソフトであるuvをPCにインストール（入�
 
 python環境構築
 ```bash
- uv venv
- uv python install 3.11.7
- uv python pin 3.11.7
  uv init
  source .venv/bin/activate
 ```
