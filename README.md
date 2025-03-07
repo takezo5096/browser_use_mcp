@@ -19,13 +19,13 @@ python環境構築
  uv venv
  uv python install 3.11.7
  uv python pin 3.11.7
+ uv init
  source .venv/bin/activate
 ```
 
 必要なpythonモジュールのインストール
 ```bash
  uv add -r requirements.txt
- uv sync
 ```
 
 ## 起動確認
