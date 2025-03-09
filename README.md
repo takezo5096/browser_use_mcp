@@ -66,7 +66,7 @@ python環境構築
 {
   "mcpServers": {
     "browser_use_mcp": {
-      "command": "path/to/your/uv",
+      "command": "/path/to/your/uv",
       "args": [
         "--directory",
         "/path/to/your/browser_use_mcp/",
