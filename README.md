@@ -55,6 +55,7 @@ python環境構築
 }
 ```
 本MCPがClaude等のMCPクライアントから正常に使えるかどうかの確認は、クライアントソフトごとに異なる。
+OPENAI_MODEL_NAMEのモデル名は`gpt-4o`または`gpt-4o-mini`を推奨。
 
 ## Claudeの設定（参考）
 
