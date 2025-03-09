@@ -54,8 +54,10 @@ python環境構築
   }
 }
 ```
-本MCPがClaude等のMCPクライアントから正常に使えるかどうかの確認は、クライアントソフトごとに異なる。
-OPENAI_MODEL_NAMEのモデル名は`gpt-4o`または`gpt-4o-mini`を推奨。
+- 本MCPがClaude等のMCPクライアントから正常に使えるかどうかの確認は、クライアントソフトごとに異なる。
+- OPENAI_MODEL_NAMEのモデル名は`gpt-4o`または`gpt-4o-mini`を推奨。
+- commandはMacの場合は`/Users/ユーザー名/.local/bin/uv`
+- --derectoryのパスは本プログラムをインストールしたディレクトリのパス
 
 ## Claudeの設定（参考）
 
