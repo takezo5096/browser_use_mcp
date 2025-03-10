@@ -19,6 +19,7 @@ python環境構築
 ```bash
  uv python install 3.11.7
  uv python pin 3.11.7
+ uv venv
  uv init
  source .venv/bin/activate
 ```
