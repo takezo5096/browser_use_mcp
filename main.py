@@ -69,13 +69,15 @@ async def browser_use(task: str) -> str:
             "--no-sandbox",
             "--disable-setuid-sandbox",
             "--disable-window-activation",
-            "--disable-focus-on-load"
+            "--disable-focus-on-load",
+            # "--headless" add headless if you need
         ]
     )
 
     browser = Browser(config=browser_config)
 
-    final_task = task + '\nダウンロードしたファイルがある場合はそのファイル名を出力してください。'
+    #final_task = task + '\nダウンロードしたファイルがある場合はそのファイル名を出力してください。'
+    final_task = task
     agent = Agent(
         browser=browser,
         controller=controller,
