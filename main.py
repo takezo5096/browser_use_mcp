@@ -1,4 +1,6 @@
 import os
+from csv import excel
+
 from dotenv import load_dotenv
 import requests
 from urllib.parse import urlparse
@@ -63,6 +65,7 @@ async def browser_use(task: str) -> str:
         cdp_url=os.environ.get('CDP_URL', None),
         headless=False,
         disable_security=True,
+        #chrome_instance_path='/usr/bin/google-chrome',
         extra_chromium_args=[
             "--enable-automation",
             "--disable-extensions",
@@ -78,20 +81,28 @@ async def browser_use(task: str) -> str:
 
     #final_task = task + '\nダウンロードしたファイルがある場合はそのファイル名を出力してください。'
     final_task = task
-    agent = Agent(
-        browser=browser,
-        controller=controller,
-        task=final_task,
-        llm=llm,
-        use_vision=False,
-        generate_gif=False,
-        max_actions_per_step=1,
-        tool_calling_method="auto",
-    )
 
-    history = await agent.run(max_steps=20)
-    result: str = history.final_result()
-    result = result.replace("\n", "  \n") # markdownの改行は半角スペース２つ
+    agent = None
+    result = None
+    try:
+        agent = Agent(
+            browser=browser,
+            controller=controller,
+            task=final_task,
+            llm=llm,
+            use_vision=False,
+            generate_gif=False,
+            max_actions_per_step=1,
+            tool_calling_method="auto",
+        )
+
+        history = await agent.run(max_steps=20)
+        result = history.final_result()
+        if result is not None:
+            result = result.replace("\n", "  \n") # markdownの改行は半角スペース２つ
+    except Exception as e:
+        await browser.close()
+        return str(e)
 
     await browser.close()
 
